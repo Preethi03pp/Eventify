@@ -1,0 +1,754 @@
+/* General container and typography */
+.home-container {
+    padding: 2.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif; /* A modern, clean font */
+}
+
+.home-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1f2937; /* A deep gray for good contrast */
+}
+
+.no-events-message {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+/* Event Cards Grid */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual Event Card Styling */
+.event-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.event-card:hover {
+    transform: translateY(-0.25rem); /* Subtle lift effect */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.event-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.2;
+}
+
+.event-description {
+    color: #4b5563;
+    margin-top: 0.5rem;
+}
+
+.event-details {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.event-details .date-time {
+    color: #4f46e5;
+    font-weight: 500;
+}
+
+/* RSVP Button */
+.rsvp-button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 9999px; /* Pill shape */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.rsvp-button:hover {
+    background-color: #4338ca;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.rsvp-button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #4f46e5;
+}
+
+
+/* Admin Layout Navigation Bar */
+.admin-nav {
+    background-color: #ffffff; /* A clean, white background */
+    padding: 1rem 2rem;
+    color: #4b5563; /* Default text color for links */
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Soft shadow for a floating effect */
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Individual Navigation Link Styling */
+.nav-link {
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px; /* Pill-shaped buttons */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+    background-color: #f3f4f6; /* A subtle, light gray background on hover */
+    color: #1f2937; /* Darker text color on hover */
+    transform: translateY(-2px); /* A small lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Optional: Active link styling (you'd use NavLink from react-router-dom for this) */
+.nav-link.active {
+    background-color: #e0e7ff; /* A light primary color background */
+    color: #4f46e5; /* Primary text color */
+    font-weight: 600;
+}
+
+
+
+/* Overall Dashboard Container */
+.admin-dashboard-container {
+    max-width: 60rem;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1f2937;
+}
+
+.no-events-message {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+/* Table Styling */
+.events-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.events-table thead tr {
+    background-color: #f9fafb;
+}
+
+.events-table th,
+.events-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.events-table th {
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.events-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.events-table tbody tr:hover {
+    background-color: #f3f4f6; /* Subtle row highlight on hover */
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.delete-button {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Optional Edit button styling */
+.edit-button {
+    background-color: #f59e0b;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.edit-button:hover {
+    background-color: #d97706;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+
+
+/* Overall Form Container */
+.form-container {
+    max-width: 40rem;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1f2937;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+/* Input Fields Styling */
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Rounded textarea and height */
+.form-textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+/* Focus and Hover Effects */
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Submit Button */
+.form-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 9999px; /* Pill-shaped button */
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-button:hover {
+    background-color: #4338ca;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Overall Page and Card Container */
+.rsvp-page-container {
+    padding: 2.5rem;
+    max-width: 40rem;
+    margin: 2.5rem auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.rsvp-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Event Details Styling */
+.event-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.event-description {
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+/* RSVP Form Section */
+.rsvp-form-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+    color: #1f2937;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+/* Rounded Inputs */
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Input Focus Effect */
+.form-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Submit Button */
+.form-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 9999px; /* Pill-shaped button */
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #4338ca;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Message Styling */
+.info-message {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+
+/* Overall Form Container */
+.rsvp-form-container {
+    max-width: 40rem;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1f2937;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+/* Rounded Inputs and Select */
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    -webkit-appearance: none; /* Removes default select arrow on webkit browsers */
+    -moz-appearance: none; /* Removes default select arrow on mozilla browsers */
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280'%3e%3cpath d='M6 8l4 4 4-4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em;
+}
+
+
+/* Input and Select Focus Effect */
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+/* Submit Button */
+.form-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #22c55e;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 9999px; /* Pill-shaped button */
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-button:hover {
+    background-color: #16a34a;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+
+
+/* Overall Container */
+.rsvp-list-container {
+    max-width: 50rem;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.list-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1f2937;
+}
+
+/* Controls (Select and Button) */
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    color: #374151;
+    transition: all 0.2s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280'%3e%3cpath d='M6 8l4 4 4-4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.fetch-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 9999px; /* Pill-shaped button */
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.fetch-button:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* RSVP Table Styling */
+.rsvps-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.rsvps-table thead tr {
+    background-color: #f9fafb;
+}
+
+.rsvps-table th,
+.rsvps-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.rsvps-table th {
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.rsvps-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.rsvps-table tbody tr:hover {
+    background-color: #f3f4f6; /* Subtle row highlight on hover */
+}
+
+/* No RSVPs Message */
+.info-message {
+    text-align: center;
+    margin-top: 1rem;
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+
+/* Overall Page Layout */
+.view-events-container {
+    padding: 2.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1f2937;
+}
+
+/* Event Cards Grid */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual Event Card */
+.event-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.event-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.event-description {
+    color: #4b5563;
+}
+
+.event-details {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 1rem;
+}
+
+/* Invite Button */
+.invite-button {
+    margin-top: 1.5rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.invite-button:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.cancel-button {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 9999px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #f3f4f6;
+}
+
+.send-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    color: #ffffff;
+    background-color: #4f46e5;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.send-button:hover:not(:disabled) {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+}
+
+.send-button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+
