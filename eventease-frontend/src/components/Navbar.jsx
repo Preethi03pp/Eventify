@@ -1,19 +1,17 @@
 // src/components/Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'; // Import the new CSS file for Navbar
 
 const Navbar = () => {
   return (
-    <nav className="bg-indigo-600 text-white p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold">
-          EventEase
-        </Link>
-        <div className="space-x-4">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/create" className="hover:underline">Create Event</Link>
-          <Link to="/admin" className="hover:underline">Admin</Link>
-        </div>
+    <nav className="navbar">
+      <h1 className="logo">Eventify</h1>
+      <div className="nav-links">
+        <Link to="/" className="nav-link">Home</Link> {/* Added className for styling */}
+        <Link to="/admin-dashboard" className="nav-link">Dashboard</Link> {/* Added className for styling */}
+        <Link to="/create-event" className="nav-link">Create Event</Link> {/* Added className for styling */}
+        <Link to="/rsvp-list" className="nav-link">RSVP List</Link> {/* Added className for styling */}
       </div>
     </nav>
   );

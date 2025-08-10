@@ -1,15 +1,15 @@
 // src/pages/CreateEvent.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-import './main.css';
-
+import './CreateEvent.css';
 
 const CreateEvent = () => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     date: '',
-    time: '',
+    startTime: '',
+    endTime: '',
     location: ''
   });
 
@@ -22,10 +22,31 @@ const CreateEvent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Combine date + start time & end time into ISO format
+    const startDateTime = `${formData.date}T${formData.startTime}:00`;
+    const endDateTime = `${formData.date}T${formData.endTime}:00`;
+
+    const eventPayload = {
+      title: formData.title,
+      description: formData.description,
+      location: formData.location,
+      startTime: startDateTime,
+      endTime: endDateTime,
+      createdBy: "admin" // later: get from logged-in user
+    };
+
     try {
-      await axios.post('http://localhost:8080/api/events', formData);
+      await axios.post('http://localhost:8080/api/events', eventPayload);
       alert('Event created successfully!');
-      setFormData({ title: '', description: '', date: '', time: '', location: '' });
+      setFormData({
+        title: '',
+        description: '',
+        date: '',
+        startTime: '',
+        endTime: '',
+        location: ''
+      });
     } catch (error) {
       console.error('Error creating event:', error);
       alert('Something went wrong!');
@@ -33,58 +54,98 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg border">
-      <h2 className="text-2xl font-bold mb-4 text-center">Create New Event</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          name="title"
-          placeholder="Event Title"
-          value={formData.title}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <textarea
-          name="description"
-          placeholder="Description"
-          value={formData.description}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        ></textarea>
-        <input
-          type="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          type="time"
-          name="time"
-          value={formData.time}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          type="text"
-          name="location"
-          placeholder="Location"
-          value={formData.location}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <button
-          type="submit"
-          className="w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700"
-        >
-          Create Event
-        </button>
-      </form>
+    <div className="create-event-page">
+      <div className="form-container">
+        <h2 className="form-title">Create New Event</h2>
+        <form onSubmit={handleSubmit} className="form-layout">
+          
+          <div className="input-group">
+            <label htmlFor="title" className="input-label">Event Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Summer Tech Conference"
+              value={formData.title}
+              onChange={handleChange}
+              className="form-input"
+              required
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="description" className="input-label">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Describe the event in detail..."
+              value={formData.description}
+              onChange={handleChange}
+              rows="4"
+              className="form-textarea"
+              required
+            ></textarea>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="date" className="input-label">Date</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              className="form-input"
+              required
+            />
+          </div>
+
+          <div className="grid-cols-2-md">
+            <div className="input-group">
+              <label htmlFor="startTime" className="input-label">Start Time</label>
+              <input
+                type="time"
+                id="startTime"
+                name="startTime"
+                value={formData.startTime}
+                onChange={handleChange}
+                className="form-input"
+                required
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="endTime" className="input-label">End Time</label>
+              <input
+                type="time"
+                id="endTime"
+                name="endTime"
+                value={formData.endTime}
+                onChange={handleChange}
+                className="form-input"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="location" className="input-label">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="e.g., Virtual, New York City"
+              value={formData.location}
+              onChange={handleChange}
+              className="form-input"
+              required
+            />
+          </div>
+
+          <button type="submit" className="submit-button">
+            Create Event
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,193 @@
+/* src/pages/LandingPage.css */
+
+/* --- IMPORTANT: Resets browser defaults for a true full-screen experience --- */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; 
+ 
+  
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+.landing-page {
+  /* This container now directly holds the hero section */
+  display: flex; /* Make it a flex container */
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally if needed */
+  
+  width: 100%;
+  min-height: 100%; /* Ensures it fills the whole screen */
+  background: linear-gradient(to bottom, #5d2b8b, #7d3f9e);
+  color: #fff;
+  overflow: hidden; 
+
+  /* Removed gap as there's no navbar here */
+  /* gap: 2rem; */ 
+}
+
+/* Navbar styles removed as the navbar is no longer in this component */
+/* .navbar { ... } */
+/* .logo { ... } */
+/* .nav-links { ... } */
+/* .nav-link { ... } */
+
+
+/* Hero Section (Two-Column Layout) */
+.hero-section {
+  flex: 1; /* Allows it to take up available vertical space */
+  display: flex; /* Makes it a flex container for horizontal arrangement */
+  flex-direction: column; /* Default to column for mobile */
+  justify-content: center; /* Center content vertically within its space */
+  align-items: center; /* Center content horizontally on mobile */
+  padding: 2rem; /* Add some padding around the section */
+  max-width: 1400px; /* Max width for the content area */
+  margin: 0 auto; /* Center the content area */
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    flex-direction: row; /* Switch to row for desktop */
+    justify-content: space-between; /* Space out content and image */
+    align-items: center; /* Vertically align items */
+    padding: 0 4rem; /* Adjust padding for desktop */
+    gap: 4rem; /* Gap between text and image */
+  }
+}
+
+.hero-content {
+  flex: 1; /* Allows text content to grow */
+  text-align: center; /* Center text on mobile */
+  max-width: 600px; /* Limit text width */
+  margin-bottom: 3rem; /* Space below text on mobile */
+  animation: fadeInDown 1s ease-out;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    text-align: left; /* Left align text on desktop */
+    margin-bottom: 0; /* Remove bottom margin on desktop */
+  }
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.hero-description {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: #d1d5db;
+  max-width: 32rem;
+  margin-left: auto; /* Center on mobile */
+  margin-right: auto; /* Center on mobile */
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Buttons */
+.cta-buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column; /* Stack buttons on mobile */
+  gap: 1rem;
+  justify-content: center; /* Center buttons on mobile */
+}
+
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row; /* Row for larger screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .cta-buttons {
+    justify-content: flex-start; /* Align buttons left on desktop */
+  }
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button.primary {
+  background-color: #f06292;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.primary:hover {
+  background-color: #ec407a;
+  transform: scale(1.05);
+}
+
+.cta-button.secondary {
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.cta-button.secondary:hover {
+  background-color: #fff;
+  color: #4a148c;
+  transform: scale(1.05);
+}
+
+/* Hero Image Container (Right Side) */
+.hero-image-container {
+  flex: 1; /* Allows image container to grow */
+  display: flex;
+  justify-content: center; /* Center image on mobile */
+  align-items: center;
+  animation: fadeInDown 1.5s ease-out;
+}
+
+@media (min-width: 768px) {
+  .hero-image-container {
+    justify-content: flex-end; /* Align image to the right on desktop */
+    max-width: 50%; /* Limit the image container width */
+  }
+}
+
+.hero-image {
+  width: 100%; /* Image fills its container */
+  max-width: 400px; /* Max size for the image */
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: rotate(3deg); /* Re-added a subtle rotation */
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero-image:hover {
+  transform: rotate(0deg);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

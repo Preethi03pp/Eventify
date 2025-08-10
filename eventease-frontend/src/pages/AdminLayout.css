@@ -1,0 +1,70 @@
+/* src/pages/AdminLayout.css */
+
+/* Global Resets (ensure these are applied once, e.g., in index.css or a global stylesheet) */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Admin Layout Container */
+.admin-layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure it fills the whole screen */
+  /* Background will be handled by individual pages, or you can add a default here */
+}
+
+/* --- SHARED NAVBAR STYLES --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker for contrast */
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 30px; /* Keep consistent height */
+  color: #fff; /* Ensure text is white */
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fff; /* Ensure logo is white */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #fff; /* Ensure links are white */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f472b6; /* Pink hover effect */
+}
+/* --- END SHARED NAVBAR STYLES --- */
+
+/* Content area below the navbar */
+.admin-layout-content {
+  flex: 1; /* Allows content to take up remaining vertical space */
+  /* Add padding-top here if content is getting hidden behind the sticky navbar */
+  /* padding-top: 30px; /* Example: if navbar height is 30px */
+}
+
+/* You might want to add specific styles for .public-layout-container in a PublicLayout.css if needed */

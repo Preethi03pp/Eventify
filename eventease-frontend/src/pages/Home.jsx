@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './main.css';
-
+// Home Page (can be inside AdminLayout)
 const Home = () => {
   const [events, setEvents] = useState([]);
 

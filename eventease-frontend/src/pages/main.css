@@ -1,14 +1,14 @@
 /* General container and typography */
 .home-container {
     padding: 2.5rem;
-    max-width: 72rem;
+    max-width: 75rem;
     margin: 0 auto;
     font-family: 'Inter', sans-serif; /* A modern, clean font */
 }
 
 .home-title {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 2rem;
     text-align: center;
     color: #1f2937; /* A deep gray for good contrast */
@@ -200,14 +200,17 @@
 }
 
 .delete-button {
-    background-color: #ef4444;
+    margin-top: 1.5rem;
+    background-color: #f62707;
     color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
+    padding: 0.75rem 1.5rem;
     border: none;
+    border-radius: 9999px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    
 }
 
 .delete-button:hover {
@@ -658,6 +661,7 @@
     cursor: pointer;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
+    
 }
 
 .invite-button:hover {

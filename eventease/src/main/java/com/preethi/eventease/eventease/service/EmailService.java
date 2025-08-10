@@ -14,7 +14,7 @@ public class EmailService {
     public void sendInvite(String recipientEmail, String eventTitle) {
         String subject = "You're Invited to " + eventTitle;
         String body = "Hi,\n\nYou've been invited to the event: " + eventTitle +
-                      ".\n\nPlease RSVP via the EventEase platform.\n\n- EventEase Team";
+                      ".\n\nPlease RSVP via the EventEase platform.\n\n- Eventify";
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();

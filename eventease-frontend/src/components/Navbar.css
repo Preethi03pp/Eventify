@@ -1,0 +1,38 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker for contrast */
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 20px; /* Keep consistent height */
+  color: #fff; /* Ensure text is white */
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fff; /* Ensure logo is white */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #fff; /* Ensure links are white */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f472b6; /* Pink hover effect */
+}

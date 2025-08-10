@@ -1,7 +1,7 @@
 // src/pages/AdminLayout.jsx
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import './main.css';
+import './AdminLayout.css';
 
 const AdminLayout = () => {
   return (
