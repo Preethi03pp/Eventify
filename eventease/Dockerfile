@@ -14,4 +14,4 @@ RUN ./mvnw clean package -DskipTests
 EXPOSE 8080
 
 # Run the JAR
-CMD ["java", "-jar", "target/eventify-1.0.0.jar"]
+CMD ["java", "-jar", "target/eventease-1.0.0.jar"]
