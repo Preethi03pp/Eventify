@@ -10,7 +10,7 @@ const RsvpList = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8080/api/events')
+      .get('https://eventifybackend.onrender.com/api/events')
       .then((res) => {
         setEvents(res.data);
       })
@@ -22,7 +22,7 @@ const RsvpList = () => {
   const fetchRsvps = async () => {
     if (!selectedEventId) return;
     try {
-      const res = await axios.get(`http://localhost:8080/api/events/${selectedEventId}/rsvps`);
+      const res = await axios.get(`https://eventifybackend.onrender.com/api/events/${selectedEventId}/rsvps`);
       setRsvps(res.data);
     } catch (error) {
       console.error('Error fetching RSVPs:', error);

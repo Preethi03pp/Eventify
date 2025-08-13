@@ -1,7 +1,7 @@
 // src/services/eventService.js
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api/events';
+const API_BASE_URL = 'https://eventifybackend.onrender.com/api/events';
 
 export const getAllEvents = async () => {
   return await axios.get(API_BASE_URL);

@@ -21,7 +21,7 @@ const AdminDashboard = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const res = await axios.get('http://localhost:8080/api/events');
+      const res = await axios.get('https://eventifybackend.onrender.com/api/events');
       setEvents(res.data);
     } catch (err) {
       console.error('Failed to fetch events:', err);
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
     if (!eventToDeleteId) return;
 
     try {
-      await axios.delete(`http://localhost:8080/api/events/${eventToDeleteId}`);
+      await axios.delete(`https://eventifybackend.onrender.com/api/events/${eventToDeleteId}`);
       setMessage('Event deleted successfully!');
       fetchEvents();
     } catch (err) {
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
 
     setSending(true);
     try {
-      await axios.post('http://localhost:8080/api/email/send', {
+      await axios.post('https://eventifybackend.onrender.com/api/email/send', {
         eventId: selectedEvent.id,
         to: email,
         subject: `You're Invited: ${selectedEvent.title}`,

@@ -37,7 +37,7 @@ const CreateEvent = () => {
     };
 
     try {
-      await axios.post('http://localhost:8080/api/events', eventPayload);
+      await axios.post('https://eventifybackend.onrender.com/api/events', eventPayload);
       alert('Event created successfully!');
       setFormData({
         title: '',

@@ -7,7 +7,7 @@ const Home = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/events')
+    axios.get('https://eventifybackend.onrender.com/api/events')
       .then((res) => setEvents(res.data))
       .catch((err) => console.error('Error fetching events:', err));
   }, []);

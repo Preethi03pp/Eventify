@@ -14,7 +14,7 @@ const RsvpEvent = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8080/api/events')
+      .get('https://eventifybackend.onrender.com/api/events')
       .then((res) => {
         setEvents(res.data);
       })
@@ -30,7 +30,7 @@ const RsvpEvent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/events/rsvp', rsvpData);
+      await axios.post('https://eventifybackend.onrender.com/api/events/rsvp', rsvpData);
       alert('RSVP submitted successfully!');
       setRsvpData({ eventId: '', name: '', email: '' });
     } catch (error) {

@@ -15,7 +15,7 @@ function PublicRsvpPage() {
 
   // Get event details
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/events/${eventId}`)
+    axios.get(`https://eventifybackend.onrender.com/api/events/${eventId}`)
       .then(res => setEvent(res.data))
       .catch(err => {
         console.error(err);
@@ -38,7 +38,7 @@ function PublicRsvpPage() {
     setIsSubmitting(true);
     setMessage(null);
 
-    axios.post('http://localhost:8080/api/events/rsvp', {
+    axios.post('https://eventifybackend.onrender.com/api/events/rsvp', {
       eventId: eventId,
       name: name,
       email: email
