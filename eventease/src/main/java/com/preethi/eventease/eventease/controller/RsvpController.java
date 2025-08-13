@@ -63,7 +63,7 @@ public class RsvpController {
         message.setText("Hi " + rsvp.getName() + ",\n\n" +
                 "Thank you for your RSVP to the event \"" + rsvp.getEvent().getTitle() + "\".\n" +
                 "We look forward to seeing you there!\n\n" +
-                "Best regards,\nEventEase Team");
+                "Best regards,\nEventify");
 
         mailSender.send(message);
     }
