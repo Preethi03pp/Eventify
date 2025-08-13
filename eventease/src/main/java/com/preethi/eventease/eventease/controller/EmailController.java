@@ -19,7 +19,7 @@ public String sendEmail(@RequestBody EmailRequest request) {
     String eventId = request.getEventId(); // Add this in DTO
     String email = request.getTo();
 
-    String rsvpLink = "http://localhost:5173/rsvpform/" + eventId + "?email=" + email;
+    String rsvpLink = "https://eventifyfront.netlify.app/rsvpform/" + eventId + "?email=" + email;
 
     String body = request.getBody() + "\n\nPlease RSVP here: " + rsvpLink;
 
